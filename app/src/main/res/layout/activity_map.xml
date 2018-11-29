@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="az.com.newazhong.utilsclass.person.activity.MapActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/map">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:paddingLeft="5dp"
+        android:background="@drawable/linearlayout" />
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/maoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.amap.api.maps.MapView>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/custom_progress_radius"
+        android:text="@string/title_tips_confim"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_communityprofile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/app_name">
+    </az.com.newazhong.utilsclass.myViews.Header>
+    <!--地图控件-->
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+    </com.amap.api.maps.MapView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#4CB5F8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="张庄路街道办"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#e16531" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="明星小区"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#13227a" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="桃园北区"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#656538" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="景秀荣祥"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#9f20ef" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="世纪中华城"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#1296db" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="张庄村"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#d28686" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="大饮马村"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#d4237a" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="桃园南区"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="#d81e06" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:text="刘庄村"
+                                android:textColor="@color/xiaohei" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View style="@style/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <az.com.newazhong.utilsclass.myViews.RichTextView
+                        android:id="@+id/tvcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#FFFFFF"
+                        android:lineSpacingExtra="7dp"
+                        android:textColor="@color/xiaohei"
+                        android:textSize="15dp" />
+
+                    <View style="@style/line" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <ImageView
+                            android:id="@+id/im1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/mdept" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_toRightOf="@+id/im1"
+                            android:gravity="center"
+                            android:paddingLeft="17dp"
+                            android:text="部门机构"
+                            android:textColor="@color/xiaohei"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+
+                    <View style="@style/line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvInsideDept"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearlayout"
+                            android:gravity="center"
+                            android:text="内设机构"
+                            android:textColor="@color/main_tab_color_bg"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/tvNeighborhood"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearlayout"
+                            android:gravity="center"
+                            android:text="居委会"
+                            android:textColor="@color/main_tab_color_bg"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/tvVillage"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/linearlayout"
+                            android:gravity="center"
+                            android:text="村委会"
+                            android:textColor="@color/main_tab_color_bg"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>

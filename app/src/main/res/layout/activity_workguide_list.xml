@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_workguide_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="az.com.newazhong.workguide.activity.WorkGuideListActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/work_guide_list">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <com.example.refreshview.CustomRefreshView
+        android:id="@id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.refreshview.CustomRefreshView>
+
+</LinearLayout>

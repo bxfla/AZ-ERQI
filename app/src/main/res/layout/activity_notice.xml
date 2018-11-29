@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_notice"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="az.com.newazhong.noticeandannouncement.activity.NoticeActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/catalog_and_announcemen">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <RadioGroup
+        android:background="#FFFFFF"
+        android:id="@+id/radionGroup"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="2dp">
+        <RadioButton
+            android:id="@+id/rbPolicy"
+            android:checked="true"
+            style="@style/main_tab_style"
+            android:textSize="16dp"
+            android:text="@string/policy" />
+        <RadioButton
+            android:id="@+id/rbCtalog"
+            style="@style/main_tab_style"
+            android:textSize="16dp"
+            android:text="@string/ctalog" />
+        <!-- android:background="@drawable/btn_checked"-->
+        <RadioButton
+            android:id="@+id/rbAnnouncemen"
+            style="@style/main_tab_style"
+            android:textSize="16dp"
+            android:text="@string/announcemen" />
+    </RadioGroup>
+    <View
+        style="@style/line"
+        android:layout_margin="2dp"/>
+    <az.com.newazhong.utilsclass.myViews.NoScrollViewPager
+        android:id="@+id/noScrollViewPager"
+        android:background="#FFFFFF"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_width="match_parent"/>
+
+</LinearLayout>

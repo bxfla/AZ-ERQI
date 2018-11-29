@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="az.com.newazhong.workoffice.activity.PropagandDetailActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/the_party_propaganda_detail">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:descendantFocusability="blocksDescendants">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textColor="@color/xiaohei"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/ziti"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/tvEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/ziti"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <View style="@style/line" />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"></WebView>
+
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/black"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="下载附件:"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvInst"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:textColor="@color/ziti"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

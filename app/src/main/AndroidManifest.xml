@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="az.com.newazhong">
+
+    <!-- 开发板： 0E:90:09:F6:23:E2:1F:8C:96:33:BB:88:41:04:2E:49:48:B9:31:0A -->
+    <!-- 发布版： CD:FB:06:D8:B0:AF:65:25:F1:33:0D:51:43:11:68:6D:1E:EA:B1:F7 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- //地图包、搜索包需要的基础权限 -->
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".utilsclass.base.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/NoAction">
+        <activity
+            android:name=".utilsclass.person.activity.FirstActivity"
+            android:theme="@style/Theme.AppStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".utilsclass.person.activity.MainActivity" />
+        <activity android:name=".utilsclass.person.activity.LoginActivity" />
+        <activity android:name=".communityprofile.activity.CommunityProfileActivity" />
+        <activity android:name=".communityprofile.activity.MDeptActivity" />
+        <activity android:name=".communityprofile.activity.CommunityProfileDetailsActivity" />
+        <activity android:name=".communityprofile.activity.NeighborhoodActivity" />
+        <activity android:name=".communityprofile.activity.VillageActivity" />
+        <activity android:name=".utilsclass.person.activity.RegisterActivity" />
+        <activity android:name=".workguide.activity.WorkGuideActivity" />
+        <activity android:name=".workguide.activity.WorkGuideListActivity" />
+        <activity android:name=".workguide.activity.WorkGuideDetailsActivity" />
+        <activity android:name=".utilsclass.person.activity.WorkGuideQueryActivity" />
+        <activity
+            android:name=".utilsclass.utils.WXPhoto.ImagesSelectorActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".noticeandannouncement.Activity.NoticeActivity" />
+        <activity android:name=".propagandwindow.activity.PartyPropagandaWinActivity" />
+        <activity android:name=".propagandwindow.activity.WorkTrendsActivity" />
+        <activity android:name=".propagandwindow.activity.WorkPropagandDetailActivity" />
+        <activity android:name=".noticeandannouncement.Activity.NoticeanddetailActivity" />
+        <activity android:name=".propagandwindow.activity.CommunityDemeanorActivity" />
+        <activity android:name=".propagandwindow.activity.CommunityDetailActivity" />
+        <activity
+            android:name=".utilsclass.person.activity.FindAddActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".utilsclass.person.activity.MapActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".street12345.activity.Street12345Activity" />
+        <activity
+            android:name=".xingzhengwork.SignInActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <!-- 2d1dd21631bc131b7cc9a797c85eb4ad   ef42cdede24b6498b974ddf021d39d1f -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ef42cdede24b6498b974ddf021d39d1f" />
+
+        <activity android:name=".partypropaganda.PartyPropagandaActivity" />
+        <activity android:name=".street12345.activity.StreetDetailActivity" />
+        <activity android:name=".xingzhengwork.LoginInActivity" />
+        <activity android:name=".propagandwindow.activity.YuYueActivity" />
+        <activity android:name=".utilsclass.person.activity.QueryActivityActivity" />
+        <activity android:name=".utilsclass.person.activity.MyFindActivity" />
+        <activity android:name=".xingzhengwork.SignInHistoryActivity" />
+        <activity android:name=".workoffice.activity.WorkOfficeListActivity" />
+        <activity android:name=".workoffice.activity.TypeFixActivity" />
+        <activity android:name=".workoffice.activity.TypeFixTypeActivity" />
+        <activity android:name=".workoffice.activity.TypeFixTypeRCAPActivity" />
+        <activity android:name=".workoffice.activity.PageActivity" />
+        <activity android:name=".workoffice.activity.PageActivity1" />
+        <activity android:name=".workoffice.activity.PageActivity2" />
+        <activity android:name=".workoffice.activity.PageActivity3" />
+        <activity android:name=".workoffice.activity.PageActivity4" />
+        <activity android:name=".workoffice.activity.PageActivity5" />
+        <activity android:name=".workoffice.activity.PageActivity6" />
+        <activity android:name=".workoffice.activity.PageActivity7" />
+        <activity android:name=".workoffice.activity.PageActivity8" />
+        <activity android:name=".workoffice.activity.PageActivity9" />
+        <activity android:name=".workoffice.activity.PageActivity10" />
+        <activity android:name=".workoffice.activity.PageActivity11" />
+        <activity android:name=".workoffice.activity.PageActivity12" />
+        <activity android:name=".workoffice.activity.PropagandaActivity" />
+        <activity android:name=".workoffice.activity.PropagandDetailActivity" />
+        <activity android:name=".workoffice.activity.SendPersonActivity" />
+        <activity android:name=".workoffice.activity.PageHistoryActivity" />
+        <activity android:name=".workoffice.activity.PageHistoryDetailActivity" />
+        <activity android:name=".partyBuildingPropaganda.PropagListActivity" />
+        <activity android:name=".workoffice.activity.PageListActivity" />
+        <activity android:name=".workoffice.activity.VacationalActivity" />
+        <activity android:name=".workoffice.activity.MoreCheckActivity" />
+        <activity android:name=".workoffice.activity.MemoActivity" />
+        <activity android:name=".Test2Activity"></activity>
+    </application>
+
+</manifest>

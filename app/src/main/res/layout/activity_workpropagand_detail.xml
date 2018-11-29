@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_partpropagand_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="az.com.newazhong.propagandwindow.activity.WorkPropagandDetailActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/work_trends">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:background="#FFFFFF">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:descendantFocusability="blocksDescendants">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/xiaohei"
+                android:textSize="18dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="1dp"
+                android:layout_height="40dp">
+                <TextView
+                    android:id="@+id/tvDepartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="6dp"
+                    android:textColor="@color/ziti"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="11dp"
+                    android:paddingLeft="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="6dp"
+                    android:textColor="@color/ziti"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <View style="@style/line"/>
+
+            <az.com.newazhong.utilsclass.myViews.RichTextView
+                android:visibility="gone"
+                android:id="@+id/tvContent"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/xiaohei"
+                android:lineSpacingExtra="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:textSize="14dp">
+            </az.com.newazhong.utilsclass.myViews.RichTextView>
+
+            <WebView
+                android:id="@+id/webView"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </WebView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

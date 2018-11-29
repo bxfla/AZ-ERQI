@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_community_demeanor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="az.com.newazhong.propagandwindow.activity.CommunityDemeanorActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/community_mien">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <RadioGroup
+        android:id="@+id/radionGroup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbPhoto"
+            android:checked="true"
+            style="@style/main_tab_style"
+            android:textSize="16dp"
+            android:text="@string/activity_photo" />
+        <RadioButton
+            android:id="@+id/rbContent"
+            style="@style/main_tab_style"
+            android:textSize="16dp"
+            android:text="@string/activity_content" />
+    </RadioGroup>
+
+    <View
+        style="@style/line"/>
+
+    <az.com.newazhong.utilsclass.myViews.CustomViewPager
+        android:id="@+id/customViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

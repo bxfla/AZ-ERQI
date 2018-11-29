@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_party_propaganda"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="az.com.newazhong.partypropaganda.PartyPropagandaActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/the_party_propaganda"></az.com.newazhong.utilsclass.myViews.Header>
+
+    //子菜单1排
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/partypropaganda"
+            android:drawableTop="@drawable/dangyuanjiaoyu"
+            android:padding="10dp"
+            android:text="党员教育"
+            android:textSize="15dp" />
+
+        <Button
+            style="@style/partypropaganda"
+            android:drawableTop="@drawable/dangyuanxuexi"
+            android:text="干部学习"
+            android:textSize="15dp" />
+
+        <Button
+            style="@style/partypropaganda"
+            android:drawableTop="@drawable/dangyuanhuodong"
+            android:text="组织活动"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

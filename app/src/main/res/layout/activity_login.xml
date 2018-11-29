@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="az.com.newazhong.utilsclass.person.activity.LoginActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+       android:id="@+id/header"
+        style="@style/Heander"
+        app:header_is_left_iv_visiable="false"
+        app:header_is_right_tv_visiable="true"
+        app:header_title_right="@string/register"
+        app:header_title="@string/login">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            style="@style/linerlayout"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/ImaheView"
+                android:src="@drawable/user_phone"/>
+            <EditText
+                android:id="@+id/userPhone"
+                android:hint="@string/please_writer_phone"
+                android:textColor="@color/style_divider_color"
+                android:textSize="15dp"
+                style="@style/EditText"/>
+        </LinearLayout>
+        <View
+            style="@style/line" />
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/ImaheView"
+                android:src="@drawable/user_password" />
+            <EditText
+                android:id="@+id/userPassword"
+                style="@style/EditText"
+                android:textColor="@color/style_divider_color"
+                android:hint="@string/please_writer_password"/>
+            <Button
+                android:id="@+id/btnYanZheng"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:hint="获取验证码"/>
+        </LinearLayout>
+        <View style="@style/line"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/userResetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/resert_password"
+            android:textColor="@color/color_bg_selected"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/userLogin"
+            style="@style/Button"
+            android:background="@drawable/custom_progress_radius"
+            android:text="@string/login"/>
+    </LinearLayout>
+</LinearLayout>

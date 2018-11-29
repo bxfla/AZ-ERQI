@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="az.com.newazhong.partyBuildingPropaganda.PropagListActivity">
+
+    <az.com.newazhong.utilsclass.myViews.Header
+        android:id="@+id/header"
+        style="@style/Heander"
+        app:header_title="@string/party_building_propaganda">
+    </az.com.newazhong.utilsclass.myViews.Header>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rbPropStydy"
+            style="@style/fragment0_radionbutton"
+            android:drawableTop="@drawable/prop_stydy"
+            android:text="党员教育" />
+
+        <RadioButton
+            android:id="@+id/rbClassStudy"
+            style="@style/fragment0_radionbutton"
+            android:drawableTop="@drawable/class_syudy"
+            android:text="干部学习" />
+        <RadioButton
+            android:id="@+id/rbPropyActivity"
+            style="@style/fragment0_radionbutton"
+            android:drawableTop="@drawable/propy_activity"
+            android:text="组织活动" />
+    </LinearLayout>
+
+</LinearLayout>
