@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -34,7 +36,7 @@ import az.com.newazhong.utilsclass.view.VersionView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener,VersionView {
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener, VersionView {
 
     @Bind(R.id.header)
     Header header;
@@ -48,7 +50,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     RadioGroup mainRg;
     @Bind(R.id.fragment_container)
     NoScrollViewPager fragmentContainer;
-
+    AlertDialogUtil alertDialogUtil;
     VersionPresenter presenter;
     public Fragment fragment01, fragment02, fragment03;
     private static boolean isExit = false;
@@ -63,6 +65,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             isExit = false;
         }
     };
+    @Bind(R.id.srl)
+    SwipeRefreshLayout srl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,21 +75,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         ActivityCollector.addActivity(this);
         Intent intent = getIntent();
         tag = intent.getStringExtra("tag");
-        fragment01 = new Fragment0();
-        fragment02 = new Fragment1();
-        fragment03 = new Fragment2();
-        list.add(fragment01);
-        list.add(fragment02);
-        list.add(fragment03);
-        mainRg.setOnCheckedChangeListener(this);
-        fragmentContainer.setAdapter(new Fragment_Adapter(getSupportFragmentManager(), list));
-        if (tag!=null&&tag.equals("1")){
-            fragmentContainer.setCurrentItem(1,false);
-            rb1.setChecked(true);
-        }else {
-            fragmentContainer.setCurrentItem(0,false);
-        }
-        presenter = new VersionPresenterimpl(this,this);
+        presenter = new VersionPresenterimpl(this, this);
         presenter.getVersionPresenter("ANDROID");
     }
 
@@ -163,8 +153,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         int version1 = getVersionCode();
         int newVersion = version.getData().getVersion();
         final String path = version.getData().getUrl();
-        if (version1!=newVersion&&newVersion>version1){
-            new AlertDialogUtil(MainActivity.this).showDialog("最新版本"+newVersion+".1.0", new AlertDialogCallBack() {
+        if (version1 != newVersion && newVersion > version1) {
+            new AlertDialogUtil(MainActivity.this).showDialog("最新版本" + newVersion + ".1.0", new AlertDialogCallBack() {
                 @Override
                 public void confirm() {
                     Intent intent = new Intent();
@@ -179,6 +169,32 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                     MainActivity.this.finish();
                 }
             });
+        } else {
+            srl.setVisibility(View.GONE);
+            fragment01 = new Fragment0();
+            fragment02 = new Fragment1();
+            fragment03 = new Fragment2();
+            list.add(fragment01);
+            list.add(fragment02);
+            list.add(fragment03);
+            mainRg.setOnCheckedChangeListener(this);
+            fragmentContainer.setAdapter(new Fragment_Adapter(getSupportFragmentManager(), list));
+            if (tag != null && tag.equals("1")) {
+                fragmentContainer.setCurrentItem(1, false);
+                rb1.setChecked(true);
+            } else {
+                fragmentContainer.setCurrentItem(0, false);
+            }
+        }
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        switch (level){
+            case TRIM_MEMORY_UI_HIDDEN:
+                finish();
+                break;
         }
     }
 }

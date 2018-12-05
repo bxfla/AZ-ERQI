@@ -177,8 +177,8 @@ public class SendPersonActivity extends BaseActivity implements SendPersonAdapte
     @Override
     public void onItemClick(int position) {
 //        listPerson.clear();
-        if (listPerson1.contains(listPerson2.get(position).getName())) {
-            listPerson1.remove(listPerson2.get(position).getName());
+        if (listPerson1.contains(listPerson2.get(position))) {
+            listPerson1.remove(listPerson2.get(position));
         } else {
             listPerson1.add(listPerson2.get(position));
         }

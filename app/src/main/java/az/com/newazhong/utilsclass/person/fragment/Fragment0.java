@@ -1,14 +1,18 @@
 package az.com.newazhong.utilsclass.person.fragment;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -127,6 +131,7 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
     NoticePresenter noticePresenter;
     SharedPreferencesHelper sharedPreferencesHelper;
     String title;
+    private static AlertDialog dialog = null;
 
 
     @Override
@@ -134,14 +139,42 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment0, container, false);
+
+        LayoutInflater flat = LayoutInflater.from(getActivity());
+        View v = flat.inflate(R.layout.loading, null);
+        // v.setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
+        // 创建对话
+        dialog = new AlertDialog.Builder(getActivity(), R.style.dialog).create();
+        // 设置返回键点击消失对话框
+        dialog.setCancelable(false);
+        // 设置点击返回框外边不消失
+        dialog.setCanceledOnTouchOutside(false);
+        // 给该对话框增加系统权限
+        // dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        // 显示对话
+        dialog.show();
+        // 加载控件
+        TextView title = (TextView) v.findViewById(R.id.loading_title);
+        title.setVisibility(View.VISIBLE);
+        title.setText("加载数据中");
+
+        // 必须放到显示对话框下面，否则显示不出效果
+        Window window = dialog.getWindow();
+        // window.getAttributes().x = 0;
+        // window.getAttributes().y = 0;//设置y坐标
+
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.gravity = Gravity.CENTER;
+        // params.alpha = 0.6f;
+        window.setAttributes(params); // 加载布局组件
+        dialog.getWindow().setContentView(v);
+
         sharedPreferencesHelper = new SharedPreferencesHelper(getActivity(), "login");
         alertDialogUtil = new AlertDialogUtil(getActivity());
-        noticePresenter = new NoticePresenterimpl(this, getActivity());
-        noticePresenter.getNoticePresenter("");
         bannerPresenter = new BannerPresenterimpl(this, getActivity());
         bannerPresenter.getBannerImagePresenter();
-        propagandWindowPresenter = new PropagandWindowPresenterimpl(this, getActivity());
-        propagandWindowPresenter.getPropagandWindowPresenter();
         Fresco.initialize(getActivity());
         ButterKnife.bind(this, view);
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -283,6 +316,8 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
             message.what = Constant.TAG_TWO;
             handler.sendMessage(message);
         }
+        noticePresenter = new NoticePresenterimpl(this, getActivity());
+        noticePresenter.getNoticePresenter("");
     }
 
     /**
@@ -316,6 +351,19 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
                 tvContent1.setHtml1(beanList.get(1).getContent(), 500);
             }
         }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1500);
+                    Message message = new Message();
+                    message.what = 111;
+                    handler.sendMessage(message);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     @Override
@@ -359,6 +407,8 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
             Log.d("XXX2", ooo);
             tvSeeItNow.setText(centent.replaceAll("#", "  " + "\n" + "\n" + "\n"));
         }
+        propagandWindowPresenter = new PropagandWindowPresenterimpl(this, getActivity());
+        propagandWindowPresenter.getPropagandWindowPresenter();
     }
 
     private Handler handler = new Handler() {
@@ -386,6 +436,10 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
                     //banner设置方法全部调用完毕时最后调用
                     banner.start();
                     srl.setRefreshing(false);
+                    break;
+                case 111:
+                   dialog.cancel();
+                    break;
             }
         }
     };

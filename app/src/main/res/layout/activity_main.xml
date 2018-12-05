@@ -6,6 +6,188 @@
     android:background="@android:color/white"
     android:layout_height="match_parent">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/shouye">
+
+            <LinearLayout
+                android:background="@color/shouye"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <az.com.newazhong.utilsclass.myViews.Header
+                    android:id="@+id/header2"
+                    style="@style/Heander"
+                    app:header_is_left_iv_visiable="false"
+                    app:header_title="@string/app_name">
+                </az.com.newazhong.utilsclass.myViews.Header>
+
+                //banner
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.youth.banner.Banner
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        app:image_scale_type="fit_xy"
+                        android:id="@+id/banner"
+                        app:title_height="20dp"
+                        app:title_textsize="15dp"
+                        app:title_textcolor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp" />
+                </LinearLayout>
+
+                //今日关注
+                <LinearLayout
+                    android:layout_marginTop="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+                    <LinearLayout
+                        android:background="#FFFFFF"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/see_it_now"
+                            android:layout_gravity="center_vertical"/>
+                        <az.com.newazhong.utilsclass.myViews.ScrollForeverTextView
+                            android:id="@+id/tvSeeItNow"
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:layout_height="20dp"
+                            android:ellipsize="marquee"
+                            android:textSize="13dp"
+                            android:singleLine="true"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/xiaohei"
+                            android:focusable="true"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--列表-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbCommunityProfile"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/community_profile"
+                            android:text="@string/community_profile" />
+
+                        <RadioButton
+                            android:id="@+id/rbWorkStaty"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/propaganda_window"
+                            android:text="@string/work_trends" />
+                        <RadioButton
+                            android:id="@+id/rbCatalogAndAnnouncemen"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/catalog_and_announcemen"
+                            android:text="@string/catalog_and_announcemen" />
+                        <RadioButton
+                            android:id="@+id/comdBetaf"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/convenience_services"
+                            android:text="@string/community_mien" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbWorkGuide"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/work_guide"
+                            android:text="@string/work_guide" />
+
+                        <RadioButton
+                            android:visibility="gone"
+                            android:id="@+id/rbThePartyPropaganda"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/the_party_propaganda"
+                            android:text="@string/the_party_propaganda" />
+
+                        <RadioButton
+                            android:id="@+id/rbCommunity123"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/community123"
+                            android:text="@string/community123" />
+                        <RadioButton
+                            android:id="@+id/rbAdministrativeOffice"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/administrative_office"
+                            android:text="@string/party_building_propaganda" />
+                        <RadioButton
+                            android:id="@+id/rbWorkOffice"
+                            style="@style/fragment0_radionbutton"
+                            android:drawableTop="@drawable/work_office"
+                            android:text="@string/convenience_services" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                //新闻
+                <LinearLayout
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:background="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="2dp">
+                        <ImageView
+                            android:textColor="#FF9933"
+                            android:background="#FFFFFF"
+                            android:layout_width="120dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/news"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"/>
+                        <TextView
+                            android:id="@+id/moreNew"
+                            android:textColor="#159FF8"
+                            android:background="#FFFFFF"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="30dp"
+                            android:text="@string/more"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"/>
+                    </RelativeLayout>
+                    <include layout="@layout/fragment_item_layout"/>
+                    <include layout="@layout/fragment_item_layout1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
     <az.com.newazhong.utilsclass.myViews.Header
         android:id="@+id/header"
         android:visibility="gone"
