@@ -137,6 +137,7 @@ public class PageActivity9 extends BaseActivity implements View.OnClickListener 
     private ArrayList<String> moreList1 = new ArrayList<>();
     private List<SendPerson> listPerson = new ArrayList<>();
     private List<SendPerson> listPerson1 = new ArrayList<>();
+    private List<SendPerson> listPerson2 = new ArrayList<>();
     String url0 = Constant.BASE_URL + "upload";
     File fileDate;
     String name = "";
@@ -594,11 +595,11 @@ public class PageActivity9 extends BaseActivity implements View.OnClickListener 
                                 listB.add(beanB);
                                 sendNum += 1;
                             }
-                            if (listPerson.size() != 0) {
-                                for (int i = 0; i < listPerson.size(); i++) {
+                            if (listPerson2.size() != 0) {
+                                for (int i = 0; i < listPerson2.size(); i++) {
                                     UpData.ApprovalGroupBean beanU = new UpData.ApprovalGroupBean();
-                                    beanU.setAuditor(listPerson.get(i).getName());
-                                    beanU.setUserId(Integer.parseInt(listPerson.get(i).getId()));
+                                    beanU.setAuditor(listPerson2.get(i).getName());
+                                    beanU.setUserId(Integer.parseInt(listPerson2.get(i).getId()));
                                     beanU.setMemo("");
                                     beanU.setSort(i);
                                     beanU.setAdopt(null);
@@ -792,6 +793,7 @@ public class PageActivity9 extends BaseActivity implements View.OnClickListener 
                 }
                 name = "";
                 listPerson = (List<SendPerson>) data.getSerializableExtra("name");
+                listPerson2.add(listPerson.get(0));
                 if (listPerson.size() != 0) {
                     for (int i = 0; i < listPerson.size(); i++) {
                         if (i != listPerson.size() - 1) {
@@ -825,6 +827,75 @@ public class PageActivity9 extends BaseActivity implements View.OnClickListener 
                 } else {
                     tvSend.setText(name);
                 }
+//                if (resultCode == Constant.TAG_FIVE) {
+//                    name = "";
+//                    listPerson = (List<SendPerson>) data.getSerializableExtra("name");
+//                    if (listPerson.size() != 0) {
+//                        for (int i = 0; i < listPerson.size(); i++) {
+//                            if (i != listPerson.size() - 1) {
+//                                name = name + listPerson.get(i).getName() + "--->";
+//                            } else {
+//                                name = name + listPerson.get(i).getName();
+//                            }
+//                        }
+//                    }
+//                    String data1 = tvSend.getText().toString();
+//                    if (data1 != null && data1.length() != 0) {
+//                        if (!name.equals("")) {
+//                            tvSend.setText(data1 + "--->" + name);
+//                        }
+//                    } else {
+//                        tvSend.setText(name);
+//                    }
+//                }
+//                if (resultCode == Constant.TAG_SIX) {
+////                    name = "";
+////                    listPerson1 = (List<SendPerson>) data.getSerializableExtra("name");
+////                    if (listPerson1.size() != 0) {
+////                        for (int i = 0; i < listPerson1.size(); i++) {
+////                            if (i != listPerson1.size() - 1) {
+////                                if (tvCopy.getText().toString().length() != 0) {
+////                                    if (name.indexOf(listPerson1.get(i).getName()) != -1) {
+////                                        if (i != listPerson1.size() - 1) {
+////                                            name = name + listPerson1.get(i).getName() + ",";
+////                                        } else {
+////                                            name = name + listPerson1.get(i).getName() + ",";
+////                                        }
+////                                    }
+////                                } else {
+////                                    name = name + listPerson1.get(i).getName() + ",";
+////                                }
+////                            } else {
+////                                if (tvCopy.getText().toString().length() != 0) {
+////                                    if (name.indexOf(listPerson1.get(i).getName()) != -1) {
+////                                        name = name + listPerson1.get(i).getName();
+////                                    }
+////                                } else {
+////                                    name = name + listPerson1.get(i).getName();
+////                                }
+////                            }
+////                        }
+////                    }
+//                    name = "";
+//                    listPerson1 = (List<SendPerson>) data.getSerializableExtra("name");
+//                    if (listPerson1.size() != 0) {
+//                        for (int i = 0; i < listPerson1.size(); i++) {
+//                            if (i != listPerson1.size() - 1) {
+//                                name = name + listPerson1.get(i).getName() + ",";
+//                            } else {
+//                                name = name + listPerson1.get(i).getName();
+//                            }
+//                        }
+//                    }
+//                    String data1 = tvCopy.getText().toString();
+//                    if (data1 != null && data1.length() != 0) {
+//                        if (!name.equals("")) {
+//                            tvCopy.setText(data1 + "," + name);
+//                        }
+//                    } else {
+//                        tvCopy.setText(name);
+//                    }
+//                }
                 break;
             case Constant.TAG_SIX:
                 if (data == null){
@@ -2426,7 +2497,7 @@ public class PageActivity9 extends BaseActivity implements View.OnClickListener 
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tvSend:
-                Intent intent = new Intent(this, SendPersonActivity.class);
+                Intent intent = new Intent(this, SendPersonActivity1.class);
                 intent.putExtra("send", "审核人");
                 startActivityForResult(intent, Constant.TAG_FIVE);
                 break;

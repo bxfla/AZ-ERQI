@@ -78,6 +78,7 @@ public class MySubscriberbean<T> extends Subscriber<T> {
         }
         RxApiManager.get().remove(httpTag);
         if(isConnect){
+            ProgressDialogUtil.stopLoad();
             ApiErrorHelper.handleCommonError(context,e);
         }
     }

@@ -62,7 +62,7 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment2, container, false);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this, view);z
         sharedPreferencesHelper = new SharedPreferencesHelper(getActivity(), "login");
         alertDialogUtil = new AlertDialogUtil(getActivity());
         return view;

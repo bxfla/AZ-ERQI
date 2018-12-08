@@ -825,6 +825,75 @@ public class PageActivity1 extends BaseActivity implements View.OnClickListener 
                 } else {
                     tvSend.setText(name);
                 }
+//                if (resultCode == Constant.TAG_FIVE) {
+//                    name = "";
+//                    listPerson = (List<SendPerson>) data.getSerializableExtra("name");
+//                    if (listPerson.size() != 0) {
+//                        for (int i = 0; i < listPerson.size(); i++) {
+//                            if (i != listPerson.size() - 1) {
+//                                name = name + listPerson.get(i).getName() + "--->";
+//                            } else {
+//                                name = name + listPerson.get(i).getName();
+//                            }
+//                        }
+//                    }
+//                    String data1 = tvSend.getText().toString();
+//                    if (data1 != null && data1.length() != 0) {
+//                        if (!name.equals("")) {
+//                            tvSend.setText(data1 + "--->" + name);
+//                        }
+//                    } else {
+//                        tvSend.setText(name);
+//                    }
+//                }
+//                if (resultCode == Constant.TAG_SIX) {
+////                    name = "";
+////                    listPerson1 = (List<SendPerson>) data.getSerializableExtra("name");
+////                    if (listPerson1.size() != 0) {
+////                        for (int i = 0; i < listPerson1.size(); i++) {
+////                            if (i != listPerson1.size() - 1) {
+////                                if (tvCopy.getText().toString().length() != 0) {
+////                                    if (name.indexOf(listPerson1.get(i).getName()) != -1) {
+////                                        if (i != listPerson1.size() - 1) {
+////                                            name = name + listPerson1.get(i).getName() + ",";
+////                                        } else {
+////                                            name = name + listPerson1.get(i).getName() + ",";
+////                                        }
+////                                    }
+////                                } else {
+////                                    name = name + listPerson1.get(i).getName() + ",";
+////                                }
+////                            } else {
+////                                if (tvCopy.getText().toString().length() != 0) {
+////                                    if (name.indexOf(listPerson1.get(i).getName()) != -1) {
+////                                        name = name + listPerson1.get(i).getName();
+////                                    }
+////                                } else {
+////                                    name = name + listPerson1.get(i).getName();
+////                                }
+////                            }
+////                        }
+////                    }
+//                    name = "";
+//                    listPerson1 = (List<SendPerson>) data.getSerializableExtra("name");
+//                    if (listPerson1.size() != 0) {
+//                        for (int i = 0; i < listPerson1.size(); i++) {
+//                            if (i != listPerson1.size() - 1) {
+//                                name = name + listPerson1.get(i).getName() + ",";
+//                            } else {
+//                                name = name + listPerson1.get(i).getName();
+//                            }
+//                        }
+//                    }
+//                    String data1 = tvCopy.getText().toString();
+//                    if (data1 != null && data1.length() != 0) {
+//                        if (!name.equals("")) {
+//                            tvCopy.setText(data1 + "," + name);
+//                        }
+//                    } else {
+//                        tvCopy.setText(name);
+//                    }
+//                }
                 break;
             case Constant.TAG_SIX:
                 if (data == null){

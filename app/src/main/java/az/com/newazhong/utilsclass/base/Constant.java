@@ -17,8 +17,8 @@ public class Constant {
     public static final int TAG_SIX = 6;
     //http://113.128.69.196:9090/
     //http://113.128.69.196:9091
-    public static final String BASE_URL="http://113.128.69.248:9000/";
-    //public static final String BASE_URL="http://112.230.201.22:9000/";
+    //public static final String BASE_URL="http://113.128.69.248:9000/";
+    public static final String BASE_URL="http://112.230.201.22:9000/";
     public static final String BASE_URL_NEW="http://113.128.68.106:9000/";
     public static final String BASE_URL_NEW_Image="http://124.133.227.214:62";
     public static final String GETDATA="获取数据中";

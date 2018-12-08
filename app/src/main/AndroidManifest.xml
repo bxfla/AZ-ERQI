@@ -101,6 +101,7 @@
         <activity android:name=".workoffice.activity.PropagandaActivity" />
         <activity android:name=".workoffice.activity.PropagandDetailActivity" />
         <activity android:name=".workoffice.activity.SendPersonActivity" />
+        <activity android:name=".workoffice.activity.SendPersonActivity1" />
         <activity android:name=".workoffice.activity.PageHistoryActivity" />
         <activity android:name=".workoffice.activity.PageHistoryDetailActivity" />
         <activity android:name=".partyBuildingPropaganda.PropagListActivity" />
