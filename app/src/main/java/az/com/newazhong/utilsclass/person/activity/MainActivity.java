@@ -20,6 +20,7 @@ import java.util.List;
 
 import az.com.newazhong.Fragment_Adapter;
 import az.com.newazhong.R;
+import az.com.newazhong.SharedPreferencesHelper;
 import az.com.newazhong.utilsclass.base.AlertDialogCallBack;
 import az.com.newazhong.utilsclass.base.BaseActivity;
 import az.com.newazhong.utilsclass.bean.Version;
@@ -72,6 +73,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        new SharedPreferencesHelper(this,"fragment_tag").saveData(this,"fragment_tag","1");
         ActivityCollector.addActivity(this);
         Intent intent = getIntent();
         tag = intent.getStringExtra("tag");
@@ -108,12 +110,15 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         switch (checkedId) {
             case R.id.rb0:
                 fragmentContainer.setCurrentItem(0, false);
+                new SharedPreferencesHelper(this,"fragment_tag").saveData(this,"fragment_tag","1");
                 break;
             case R.id.rb1:
                 fragmentContainer.setCurrentItem(1, false);
+                new SharedPreferencesHelper(this,"fragment_tag").saveData(this,"fragment_tag","2");
                 break;
             case R.id.rb2:
                 fragmentContainer.setCurrentItem(2, false);
+                new SharedPreferencesHelper(this,"fragment_tag").saveData(this,"fragment_tag","3");
                 break;
         }
     }

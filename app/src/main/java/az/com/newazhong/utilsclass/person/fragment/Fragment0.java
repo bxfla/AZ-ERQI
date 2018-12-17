@@ -438,7 +438,7 @@ public class Fragment0 extends BaseFragment implements BannerView, PropagandWind
                     srl.setRefreshing(false);
                     break;
                 case 111:
-                   dialog.cancel();
+                    dialog.cancel();
                     break;
             }
         }
