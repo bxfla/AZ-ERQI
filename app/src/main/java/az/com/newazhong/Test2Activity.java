@@ -43,7 +43,6 @@ public class Test2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
         ButterKnife.bind(this);
-//        String url = "http://kq.aucanlink.cn/index.php/home/public/login?phone=18963088252";
 //        FastUtils.getFastData(url, new BaseFastJSONRequestBackLisenter() {
 //            @Override
 //            public void success(String o) {
