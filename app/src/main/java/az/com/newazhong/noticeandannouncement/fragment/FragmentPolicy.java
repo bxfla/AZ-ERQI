@@ -40,7 +40,7 @@ public class FragmentPolicy extends Fragment implements NoticeView {
     NoticePresenter noticePresenter;
     NoticeAdapter adapter;
     View view;
-
+//git测试
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
